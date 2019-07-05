@@ -13,7 +13,7 @@ h2 {
 	padding: 10px 5vw;
 	cursor: pointer;
 }
-h2.answer.close {
+h2.accordion_item--content.close {
 	background-image: url(img/close-button.png);
 }
 
@@ -30,12 +30,12 @@ header {
    margin: auto;
    color: rgb(44, 44, 44);
 }
-.main h2 {
+.accordion_wrapper h2 {
    color: orangered;
    font-size: 1.5rem;
    margin-bottom: 0;
 }
-.main {
+.accordion_wrapper {
    margin-bottom: 3rem;
 }
 footer {
@@ -47,15 +47,12 @@ footer {
 footer a {
    text-decoration: none;
 }
-.answer {
+.accordion_item--content {
    display: none;
    margin-left: 25px;	
 
 }
 
-.answer.active {
-   display: block;
-}
 </style>
 
 </head>
@@ -65,21 +62,26 @@ footer a {
       JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
   </header>
   <div class="contain">
-  	<div class="main">
+  	<div class="accordion_wrapper">
       <h1>A One Page FAQ</h1>
-
-       <h2 class="question">I've heard that JavaScript is the long-lost fountain of youth. Is this true?</h2>
-       <div class="answer">
-          <p>Why, yes it is! Studies prove that learning JavaScript freshens the mind and extends life span by several hundred years. (Note: some scientists disagree with these claims.)</p>
+       <div class="accordion_item">
+            <h2 class="accordion_item--heading">I've heard that JavaScript is the long-lost fountain of youth. Is this true?</h2>
+            <div class="accordion_item--content">
+               <p>Why, yes it is! Studies prove that learning JavaScript freshens the mind and extends life span by several hundred years. (Note: some scientists disagree with these claims.)</p>
+            </div>
        </div>
-        <h2 class="question">Can JavaScript really solve all of my problems?</h2>
-        <div class="answer">
-          <p>Why, yes it can! It's the most versatile programming language ever created and is trained to provide financial management advice, life-saving CPR, and even to take care of household pets.</p>
-        </div>
-        <h2 class="question">Is there nothing JavaScript <em>can&#8217;t</em> do?</h2>
-        <div class="answer">
-          <p>Why, no there isn&#8217;t! It&#8217;s even able to write its own public relations-oriented Frequently Asked Questions pages. Now that&#8217;s one smart programming language!</p>
-        </div>
+       <div class="accordion_item">
+            <h2 class="accordion_item--heading">Can JavaScript really solve all of my problems?</h2>
+            <div class="accordion_item--content">
+               <p>Why, yes it can! It's the most versatile programming language ever created and is trained to provide financial management advice, life-saving CPR, and even to take care of household pets.</p>
+            </div>
+       </div>
+       <div class="accordion_item">
+            <h2 class="accordion_item--heading">Is there nothing JavaScript <em>can&#8217;t</em> do?</h2>
+            <div class="accordion_item--content">
+               <p>Why, no there isn&#8217;t! It&#8217;s even able to write its own public relations-oriented Frequently Asked Questions pages. Now that&#8217;s one smart programming language!</p>
+            </div>
+       </div> 
 
   </div>
   <footer>
