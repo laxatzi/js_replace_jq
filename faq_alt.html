@@ -88,20 +88,25 @@ footer a {
 <!-- scripts -->
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
 <script>
-      $(function($) {
-         $('.answer').hide();
-         $('.main h2').click(function() {
-            let $answer = $(this).next('.answer');
-            if ($answer.is(':hidden')) {
-               $answer.slideDown();
-               $(this).addClass('close');
-            } else {
-               $answer.slideUp();
-               $(this).removeClass('close');
-            }
-         }); // end function
+   // jQuery code
+
+      // $(function($) {
+      //    $('.answer').hide();
+      //    $('.main h2').click(function() {
+      //       let $answer = $(this).next('.answer');
+      //       if ($answer.is(':hidden')) {
+      //          $answer.slideDown();
+      //          $(this).addClass('close');
+      //       } else {
+      //          $answer.slideUp();
+      //          $(this).removeClass('close');
+      //       }
+      //    }); // end function
       
-      }); // end jquery
+      // }); // end jquery
+
+      // vanilla js alternative 
+      
       </script>
 </body>
 </html>
