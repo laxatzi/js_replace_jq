@@ -50,9 +50,13 @@ footer a {
 .accordion_item--content {
    display: none;
    margin-left: 25px;	
-
 }
-
+.open .accordion_item--content{
+   display: block;
+}
+.close .accordion_item--content{
+   display: none;
+}
 </style>
 
 </head>
@@ -111,7 +115,24 @@ footer a {
 
       // Vanilla  JAVASCRIPT  alternative 
     
-     
+            // define the location of the event
+            let accordHeading = document.getElementsByClassName('accordion_item--heading');
+            let accordItem = document.getElementsByClassName('accordion_item');
+
+            for(let j= 0; j<accordHeading.length; j++){
+               accordHeading[j].addEventListener('click', toggleFunc, false);
+            }
+
+            // the actual toggle function
+            function toggleFunc(p) {
+               let itemClass = this.parentNode.className; // store parent element's class name
+               for(let i = 0; i<accordItem.length; i++){
+                  accordItem[i].className = 'accordion_item close';
+               } // loop through accordion items and assign a new class (close) to each one
+               if(itemClass == 'accordion_item close') {
+                  this.parentNode.className = 'accordion_item open';
+               } // if class (close) already there change it to new one (open)
+            }
 
         
            
