@@ -108,36 +108,9 @@ footer a {
       // }); // end jquery
 
       // Vanilla  JAVASCRIPT  alternative 
-      
-          // listen for click on the document
-          document.addEventListener('click', function(ev){
-           
-             // bail if clicked element does NOT have the class 'question'
-             if(!ev.target.classList.contains('question')) return;
+    
 
-                // store content
-                var content = document.querySelector(ev.target.question);
-                if(!content) return;
-
-             //prevent default link behavior 
-             ev.preventDefault();
-
-          
-
-             // if content already expanded => expand it and quit
-            if(content.classList.contains('active')) {
-               content.classList.remove('active');
-               return;
-            }
-
-  // Get all open accordion content, loop through it, and close it
-            var accordions = document.querySelectorAll('.answer.active');
-            for (var i = 0; i < accordions.length; i++) {
-               accordions[i].classList.remove('active');
-            }
-            // toggle our content
-            content.classList.toggle('active');
-          });
+        
            
       </script>
 </body>
