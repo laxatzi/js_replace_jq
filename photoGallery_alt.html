@@ -74,7 +74,7 @@
              <img src="img/circuit_board.jpg" alt="">
              <img src="img/clogs.jpg" alt="">
              <img src="img/coding.jpg" alt="">
-             <img src="img/coding_conseptual.jpg" alt="">
+             <img src="img/coding_conceptual.jpg" alt="">
              <img src="img/developer_coding.jpg" alt="">
              <img src="img/multi_screens.jpg" alt="">
              <img src="img/tabletUser.jpg" alt="">
@@ -85,8 +85,33 @@
      <script>
             const current = document.querySelector('#current');
             const images = document.querySelector('.images');
-            const gallery_img = document.querySelector('.images img');
+            const galleryImg = document.querySelectorAll('.images img');
             const opacity = .6;
+
+            // SET FIRST IMAGE OPACITY
+            galleryImg[0].style.opacity = opacity;
+            images.addEventListener('click', imgClick);
+            function imgClick(ev) {
+              
+         // reset the opacity
+            img.forEach(
+               img => (img.style.opacity=1));
+         
+         // replace current image with clicked image
+            current.src= ev.target.src;
+
+         // Add fade in class
+            current.classList.add('fade-in');
+           
+            // remove fade-in class after x seconds
+            setTimeout( 
+               ()=> current.classList.remove('.fade-in'), 500
+            )
+
+            // Change opacity to equal var opacity value
+            ev.target.style.opacity = opacity;
+         }
+         // End of javascript code
      </script>
   </body>
 </html>
