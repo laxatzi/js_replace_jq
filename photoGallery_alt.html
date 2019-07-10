@@ -86,27 +86,24 @@
             const current = document.querySelector('#current');
             const images = document.querySelector('.images');
             const galleryImg = document.querySelectorAll('.images img');
-            const opacity = .6;
+            const opacity = 0.6;
 
             // SET FIRST IMAGE OPACITY
             galleryImg[0].style.opacity = opacity;
             images.addEventListener('click', imgClick);
+      // click image function
             function imgClick(ev) {
-              
-         // reset the opacity
-            img.forEach(
+            // reset the opacity
+            galleryImg.forEach(
                img => (img.style.opacity=1));
-         
-         // replace current image with clicked image
+           // replace current image with clicked image
             current.src= ev.target.src;
-
-         // Add fade in class
+            // Add fade in class
             current.classList.add('fade-in');
-           
-            // remove fade-in class after x seconds
+           // remove fade-in class after x seconds
             setTimeout( 
                ()=> current.classList.remove('.fade-in'), 500
-            )
+            );
 
             // Change opacity to equal var opacity value
             ev.target.style.opacity = opacity;
