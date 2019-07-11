@@ -16,7 +16,7 @@
     <style>
                /* css goes here */
          :root {
-            --fade_time : .5s;
+            --fade_time : 0.5s;
          }
          body {
             padding: 0;
@@ -49,7 +49,7 @@
           /* create the animation class */
          .fade_in {
             opacity: 0;
-            animation: fadeIn var(--fade_time) .5s 1 forwards;
+            animation: fadeIn var(--fade_time) 1 forwards;
          }
          @keyframes fadeIn {
             to {
@@ -89,25 +89,32 @@
        const galleryImgs_item = document.querySelectorAll('.gallery_imgs img');
        const current = document.querySelector('#current');
        const galleryImgs = document.querySelector('.gallery_imgs')
+       const opacity = 0.6;
       //  define first gallery image's opacity
-     
+       galleryImgs_item[0].style.opacity = opacity;
+       
   // add event listener
-     
+     galleryImgs.addEventListener('click', imgRotator) 
+
   // create the function 
-     
+     function imgRotator(ev) {
+      
          //reset image opacity 
-         
+         galleryImgs_item.forEach(
+            img => img.style.opacity = 1
+         );
        // the actual gallery behavior is defined here
-        
+       current.src = ev.target.src;
       // make current image fade in when change
-        
+        current.classList.add('fade_in');
          // remove fade_in class after half a sec
+         setTimeout(()=> current.classList.remove('fade_in'), 500);
          // fail to remove it will make fade in work ONLY for the first time an image is clicked
         
          // define currently clicked image's opacity
-           
+           ev.target.style.opacity= opacity;
 
-       // end function
+      } // end function
 
      </script>
   </body>
