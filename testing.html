@@ -96,19 +96,24 @@
       galleryImgs.addEventListener('click', imgRotator);
 
   // create the function 
-      function imgRotator() {
+      function imgRotator(evn) {
     //reset image opacity 
-
+      galleryImgs_item.forEach(
+         img => (img.style.opacity= 1)
+      );
        // the actual gallery behavior is defined here
-     
+         current.src = evn.target.src;
       // make current image fade in when change
-       
+        
          // remove fade_in class after half a sec
-       
+       current.classList.add('fade_in');
          // fail to remove it will make fade in work ONLY for the first time an image is clicked
+        setTimeout(() => {
+         current.classList.remove('fade_in')
+        }, 500);
         
          // define currently clicked image's opacity
-         
+         evn.target.style.opacity= opacity;   
 
       } // end function
 
