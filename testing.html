@@ -15,52 +15,7 @@
     <link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
     <style>
                /* css goes here */
-         body {
-            margin: 20px;
-            padding: 0;
-            background-color: #333;
-         }    
-           .wrapper {
-              max-width: 760px;
-              margin: auto;
-              border: 3px solid #fff;
-              background-color: #fff;
-           }
-           .main-img img,
-           .images img {
-               width: 100%;
-           }
-           .main-img img {
-              height: 70vh;
-           }
-           .images img {
-              height: 12vh;
-           }
-           .images {
-              display: grid;
-              grid-template-columns: repeat(4, 1fr);
-              grid-gap: 5px;
-           }
-           .images img {
-              cursor: pointer;
-           }
- /* FADE IN ANIMATION */
-         @keyframes fadeIn{
-            to {
-               opacity: 1;
-            }
-         }
-         .fade-in {
-            opacity: 0;
-            animation: fadeIn .5s ease-in 1 forwards;
-         }
-
-/* MEDIA QUERIES  */
-@media screen and (max-width: 600px) {
-   .images {
-      grid-template-columns: repeat(2, 1fr);
-   }
-}
+         
     </style>
 </head>
 <body>
@@ -83,32 +38,8 @@
     <!-- scripts -->
      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
      <script>
-            const current = document.querySelector('#current');
-            const images = document.querySelector('.images');
-            const galleryImg = document.querySelectorAll('.images img');
-            const opacity = 0.6;
-
-            // SET FIRST IMAGE OPACITY
-            galleryImg[0].style.opacity = opacity;
-            images.addEventListener('click', imgClick);
-      // click image function
-            function imgClick(ev) {
-            // reset the opacity
-            galleryImg.forEach(
-               img => (img.style.opacity=1));
-           // replace current image with clicked image
-            current.src= ev.target.src;
-            // Add fade in class
-            current.classList.add('fade-in');
-           // remove fade-in class after x seconds
-            setTimeout( 
-               ()=> current.classList.remove('fade-in'), 500
-            );
-
-            // Change opacity to equal var opacity value
-            ev.target.style.opacity = opacity;
-         }
-         // End of javascript code
+           
+      
      </script>
   </body>
 </html>
