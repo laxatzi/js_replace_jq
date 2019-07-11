@@ -35,19 +35,28 @@
    <div class="container">
       <h1>Lorem, ipsum dolor.</h1>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam ab dolore totam illum rem veritatis, aut, animi illo exercitationem perspiciatis eaque? <a href="testing.html">Testing on this site</a> </p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laboriosam. Mollitia officiis vitae eaque sequi omnis, iste voluptatum labore magni quidem harum dignissimos beatae. Pariatur eum quod, delectus quisquam ut adipisci sint. Magni. <a href="https://in.gr">A news site</a>.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, laboriosam. Mollitia officiis vitae eaque sequi omnis, iste voluptatum labore magni quidem harum dignissimos beatae. Pariatur eum quod, delectus quisquam ut adipisci sint. Magni. <a href="https://news247.gr">A news site</a>.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ipsum ea molestias. Soluta neque, a dolorum officia omnis porro nisi nemo similique. <a href="http://youmightnotneedjquery.com/">A site about replacing jQuery</a>. </p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae animi sint saepe itaque dolore recusandae placeat modi ipsa in harum amet quia temporibus, incidunt dicta sit commodi earum. Quas, inventore amet autem commodi id magnam doloremque? Necessitatibus in odio id.</p>
    </div>
     <!-- scripts -->
      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
      <script>
-      const extLink = document.querySelectorAll('a[href^="http"]');
-      
-//  //   galleryImgs_item.forEach(
-//    img => (img.style.opacity= 1)
-//       );
+       const extLink = document.querySelectorAll('a[href^="http"]');
+       const extLink_item = document.querySelector('a[href^="http"]');
+       console.log(extLink);
+       
+       extLink_item.addEventListener('click', myFunc);
 
+      function myFunc(evt) {
+       extLink.forEach(
+          el => el.setAttribute('target', '_blank')
+       )
+      }
+
+      galleryImgs_item.forEach(
+         img => (img.style.opacity= 1)
+      );
      </script>
   </body>
 </html>
