@@ -87,17 +87,26 @@
      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
      <script>
       //   store main element values into vars   
-      const gallery = document.querySelector('gallery_imgs');
-      const gal_image = document.querySelectorAll('gallery_imgs img');
+      const gallery = document.querySelector('.gallery_imgs');
+      const gal_image = document.querySelectorAll('.gallery_imgs img');
       const current = document.querySelector('#current');
-      const opacity = .5;
-      
+      const opacity = .6;
+      //  define first gallery image's opacity
+
+      gal_image[0].style.opacity= opacity;
+
       gallery.addEventListener('click', imgRotate);
 
       function imgRotate(ev) {
-         ev.preventDefault();
+       // the actual gallery behavior is defined here
          current.src = ev.target.src; 
-      }
+      // make current image fade in when change
+         current.classList.add('fade_in');
+         // remove fade_in class after half a sec
+         setTimeout(
+            ()=> current.classList.remove('fade_in'), 500
+         );
+      } // end function
 
      </script>
   </body>
