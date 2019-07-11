@@ -35,7 +35,26 @@
             width: 100%;
          }
          .gallery_imgs {
-            
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 5px;
+         }
+         .current_img img {
+            height: 70vh;
+         }
+         .gallery_imgs img {
+            height: 12vh;
+         }
+         .fade_in {
+            opacity: 0;
+            animation: fadeIn var(--fade_time) ease-in-out 1 forwards;
+         }
+
+         /* create the animation with keyframes */
+         @keyframes fadeIn {
+            to {
+               opacity: 1;
+            }
          }
     </style>
 </head>
