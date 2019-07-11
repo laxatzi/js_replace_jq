@@ -47,8 +47,16 @@
             cursor: pointer;
          }
           /* create the animation class */
-       
+       .fade_in {
+          opacity: 0;
+          animation: fadeIn var(--fade_time) ease-in 1 forwards;
+       }
 
+@keyframes fadeIn {
+   to {
+      opacity: 1;
+   }
+}
    /* Media queries */
        @media screen and (max-width: 600px) {
          .gallery_imgs {
