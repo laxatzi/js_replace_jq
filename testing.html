@@ -86,12 +86,18 @@
     <!-- scripts -->
      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
      <script>
-      //   store main elements values into vars   
+      //   store main element values into vars   
       const gallery = document.querySelector('gallery_imgs');
       const gal_image = document.querySelectorAll('gallery_imgs img');
       const current = document.querySelector('#current');
-
+      const opacity = .5;
       
+      gallery.addEventListener('click', imgRotate);
+
+      function imgRotate(ev) {
+         ev.preventDefault();
+         current.src = ev.target.src; 
+      }
 
      </script>
   </body>
