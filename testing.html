@@ -47,16 +47,15 @@
             cursor: pointer;
          }
           /* create the animation class */
-       .fade_in {
-          opacity: 0;
-          animation: fadeIn var(--fade_time) ease-in 1 forwards;
-       }
-
-@keyframes fadeIn {
-   to {
-      opacity: 1;
+         .fade_in {
+            opacity: 0;
+            animation: fadeOut var(--fade_time) ease-out 1 forwards;
+         }
+   @keyframes fadeOut{
+      to {
+         opacity: 1;
+      }
    }
-}
    /* Media queries */
        @media screen and (max-width: 600px) {
          .gallery_imgs {
@@ -86,33 +85,27 @@
      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
      <script>
       //   store main element values into vars   
-     const currentImg = document.querySelector('#current');
-     const galleryImgs_item = document.querySelectorAll('.gallery_imgs img');
-     const galleryImg = document.querySelector('gallery_imgs');
-     const opacity =0.6;
+   
       //  define first gallery image's opacity
-      galleryImgs_item[0].style.opacity = opacity;
+  
        
   // add event listener
-     galleryImg.addEventListener('click', imgRotate);
+   
 
   // create the function 
-     function imgRotate(ev) {
-      
+ 
     //reset image opacity 
-      galleryImgs_item.forEach(
-         ()=> ev.styles.opacity = 1
-      );
+    
        // the actual gallery behavior is defined here
-      
+     
       // make current image fade in when change
        
          // remove fade_in class after half a sec
-        
+       
          // fail to remove it will make fade in work ONLY for the first time an image is clicked
         
          // define currently clicked image's opacity
-         ev.target.styles.opacity= opacity; 
+         
 
       } // end function
 
