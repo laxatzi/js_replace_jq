@@ -85,17 +85,20 @@
      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
      <script>
       //   store main element values into vars   
-   
+      const currentImg = document.querySelector('#current');
+      const galleryImgs = document.querySelector('.gallery_imgs');
+      const galleryImgs_item = document.querySelectorAll('.gallery_imgs img');
+      const opacity = 0.6;
       //  define first gallery image's opacity
-  
+       galleryImgs_item[0].style.opacity = opacity;
        
   // add event listener
-   
+      galleryImgs.addEventListener('click', imgRotator);
 
   // create the function 
- 
+      function imgRotator() {
     //reset image opacity 
-    
+
        // the actual gallery behavior is defined here
      
       // make current image fade in when change
