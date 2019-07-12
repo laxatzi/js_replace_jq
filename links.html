@@ -42,21 +42,17 @@
     <!-- scripts -->
      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
      <script>
-       const extLink = document.querySelectorAll('a[href^="http"]');
-       const extLink_item = document.querySelector('a[href^="http"]');
-       console.log(extLink);
+      //  const extLink = document.querySelectorAll('a[href^="http"]');
+      //  const extLink_item = document.querySelector('a[href^="http"]');
        
-       extLink_item.addEventListener('click', myFunc);
+      //  extLink_item.addEventListener('click', openExt);
 
-      function myFunc(evt) {
-       extLink.forEach(
-          el => el.setAttribute('target', '_blank')
-       )
-      }
+      // function openExt(evt) {
+      //  extLink.forEach(
+      //     el => el.setAttribute('target', '_blank')
+      //  )
+      // }
 
-      galleryImgs_item.forEach(
-         img => (img.style.opacity= 1)
-      );
      </script>
   </body>
 </html>
